@@ -34,7 +34,7 @@ export async function validateApiKey(rawKey) {
   return {
     id: apiKey.id,
     name: apiKey.name,
-    // tier: apiKey.tier (later)
+    tier: apiKey.tier,
   };
 }
 

@@ -24,6 +24,7 @@ export async function apiKeyAuthMiddleware(req, res, next) {
     // Attach caller context
     req.apiKey = apiKey;
 
+
     next();
   } catch (err) {
     console.error("API key auth error:", err);

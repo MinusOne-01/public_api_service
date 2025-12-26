@@ -10,6 +10,7 @@ export async function rateLimitMiddleware(req, res, next) {
 
     const result = await checkRateLimit({
       apiKeyId: apiKey.id,
+      tier: apiKey.tier,
     });
 
     if (!result.allowed) {

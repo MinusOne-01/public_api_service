@@ -13,12 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ApiKeyTier {
+  FREE
+  PRO
+}
 
 model ApiKey {
   id         String   @id @default(uuid())
   keyHash    String   @unique
   name       String?
   isActive   Boolean  @default(true)
+  tier       ApkiKeyTier @default(FREE)
   createdAt DateTime @default(now())
   revokedAt DateTime?
 

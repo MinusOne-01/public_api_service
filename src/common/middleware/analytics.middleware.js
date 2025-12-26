@@ -1,4 +1,4 @@
-import { trackRequest } from "../modules/analytics/analytics.service.js";
+import { trackRequest } from "../../modules/analytics/analytics.service.js";
 
 export function analyticsMiddleware(req, res, next) {
   const start = Date.now();

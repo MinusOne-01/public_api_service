@@ -1,6 +1,8 @@
 import { Router } from "express";
-import requestKey from "./apiKey.controller";
+import requestKey from "./apiKey.controller.js";
 
 const router = Router();
 
-router.get("/getkey", requestKey);
+router.post("/getkey", requestKey);
+
+export default router;

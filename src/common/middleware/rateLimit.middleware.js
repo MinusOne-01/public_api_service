@@ -1,4 +1,4 @@
-import { checkRateLimit } from "../modules/rateLimit/rateLimiter.service.js";
+import { checkRateLimit } from "../../modules/rateLimit/rateLimiter.service.js";
 
 export async function rateLimitMiddleware(req, res, next) {
   try {

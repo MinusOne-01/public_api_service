@@ -1,12 +1,15 @@
-import { buildCacheKey, getCachedResponse, cacheResponse } from "../modules/cache/cache.service.js";
+import { buildCacheKey, getCachedResponse, cacheResponse } from "../../modules/cache/cache.service.js";
 
 export async function cacheMiddleware(req, res, next) {
-    const key = buildCacheKey(req);
+
+    console.log("Key-> ", key);
 
     const cached = await getCachedResponse(key);
 
     if (cached) {
         res.setHeader("X-Cache", "HIT");
+        console.log("Cache found!");
+        console.log(cached);
         return res.json(cached);
     }
 

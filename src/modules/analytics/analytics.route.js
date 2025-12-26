@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { getAnalyticsSummary } from "./analytics.service";
+import { analyticsController } from "./analytics.controller.js";
 
 const router = Router();
 
-router.get("/analytics", getAnalyticsSummary);
+router.get("/allkeys", analyticsController);
+
+export default router;

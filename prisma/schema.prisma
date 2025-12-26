@@ -21,6 +21,8 @@ model ApiKey {
   isActive   Boolean  @default(true)
   createdAt DateTime @default(now())
   revokedAt DateTime?
+
+  metrics    ApiMetric[]
 }
 
 
@@ -33,5 +35,5 @@ model ApiMetric {
   cached    Boolean
   createdAt DateTime @default(now())
 
-  ApiKey ApiKey @relation(fields: [apiKeyId], references: [id])
+  apiKey ApiKey @relation(fields: [apiKeyId], references: [id])
 }

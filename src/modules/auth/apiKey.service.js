@@ -1,7 +1,8 @@
-import { generateApiKey, hashApiKey } from "./apiKey.utils";
+import { generateApiKey, hashApiKey } from "./apiKey.utils.js";
 import { createApiKey, findApiKeyByHash, listApiKeys as listApiKeysRepo, revokeApiKey as revokeApiKeyRepo } from "./apiKey.repo.js";
 
 export async function createNewApiKey({ name } = {}) {
+  console.log(name);
   const rawKey = generateApiKey();
   const keyHash = hashApiKey(rawKey);
 

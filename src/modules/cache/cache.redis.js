@@ -1,4 +1,4 @@
-import { redis } from "../../config/redis";
+import redis from "../../config/redis.js";
 
 export async function getCache(key) {
   const data = await redis.get(key);
@@ -6,5 +6,6 @@ export async function getCache(key) {
 }
 
 export async function setCache(key, value, ttlSeconds) {
-  await redis.setEx(key, ttlSeconds, JSON.stringify(value));
+  await redis.setex(key, ttlSeconds, JSON.stringify(value));
+  console.log("New Cache set up!");
 }

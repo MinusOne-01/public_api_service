@@ -1,6 +1,6 @@
 import { getCache, setCache } from "./cache.redis.js";
 
-const DEFAULT_TTL = 60; // seconds
+const DEFAULT_TTL = 600; // seconds
 
 function normalizeQuery(query) {
   return Object.keys(query)

@@ -1,4 +1,4 @@
-import { increment } from "./rateLimiter.redis";
+import { increment } from "./rateLimiter.redis.js";
 
 const WINDOW_SECONDS = 15;
 const MAX_REQUESTS = 5;

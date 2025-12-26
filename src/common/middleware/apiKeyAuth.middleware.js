@@ -1,7 +1,8 @@
-import { validateApiKey } from "../modules/auth/apiKey.service.js";
+import { validateApiKey } from "../../modules/auth/apiKey.service.js";
 
 export async function apiKeyAuthMiddleware(req, res, next) {
   try {
+ 
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {

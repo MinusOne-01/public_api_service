@@ -1,4 +1,4 @@
-import { prisma } from "../config/prisma.js";
+import { prisma } from "../../config/prisma.js";
 
 export async function createApiKey({ keyHash, name }) {
   return prisma.apiKey.create({

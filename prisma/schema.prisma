@@ -23,3 +23,15 @@ model ApiKey {
   revokedAt DateTime?
 }
 
+
+model ApiMetric {
+  id         String   @id @default(uuid())
+  apiKeyId  String
+  method    String
+  path      String
+  status    Int
+  cached    Boolean
+  createdAt DateTime @default(now())
+
+  ApiKey ApiKey @relation(fields: [apiKeyId], references: [id])
+}

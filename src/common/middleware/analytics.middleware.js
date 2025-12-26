@@ -1,21 +1,22 @@
 import { trackRequest } from "../../modules/analytics/analytics.service.js";
 
 export function analyticsMiddleware(req, res, next) {
-  const start = Date.now();
-
+  console.log("Analytics middleware");
+  
   res.on("finish", () => {
-    const cached = res.getHeader("X-Cache") === "HIT";
 
     if (req.apiKey) {
+      console.log("Analytics added");
       trackRequest({
         apiKeyId: req.apiKey.id,
         method: req.method,
         path: req.route?.path || req.path,
         status: res.statusCode,
-        cached,
+        cached: req.cacheStatus === "HIT",
       });
     }
   });
 
   next();
+
 }

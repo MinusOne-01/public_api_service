@@ -1,5 +1,3 @@
-// modules/service/currency.service.js
-
 const RATES = {
   INR_USD: 0.01,
   USD_INR: 100,
@@ -14,6 +12,8 @@ export async function convertCurrency({ from, to, amount }) {
   if (!rate) {
     throw new Error("Unsupported currency pair");
   }
+
+  console.log("Service done!");
 
   return {
     from,

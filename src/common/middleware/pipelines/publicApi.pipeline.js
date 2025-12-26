@@ -6,8 +6,8 @@ import { analyticsMiddleware } from "../analytics.middleware.js";
 export function publicApiPipeline() {
   return [
     apiKeyAuthMiddleware,
+    analyticsMiddleware,
     rateLimitMiddleware,
     cacheMiddleware,
-    analyticsMiddleware,
   ];
 }
